@@ -1,9 +1,12 @@
 #to do list
 import os
 import time
+import datetime
 '''
-adicionar tasks -> nome | data | dificulade
-visual
+help me -- guide
+
+adicionar tasks -> nome | data | dificulade 
+visual nome|dificulade| marcado (dicionario????????????)
 cortar
 points
 
@@ -19,14 +22,30 @@ def start():
     print('4 - points')
     print('5 - Exit')
 
+def level(i):
+    if i == 1:
+        return 'facil'
+    elif i == 2:
+        return 'medio'
+    else:
+        return 'dificil'
+
+
+
 def add_task():
     os.system('cls')
-    task_input=input('Add a task: ')
-    tasks.append(task_input)
-    print(f'Task add: [ ] {task_input}|{time.asctime()}')
-    time.sleep(5)
-    back_to_menu()
+    name_task=input('Nome da tarefas: ')
+    level_task=level(int(input('Qual a dificulade [1-facil][2-medio][3-dificil]: ')))
     
+    database_add_task={
+        'nome':name_task,
+        'dificulade':level_task,
+        'Data':datetime.date.today(),
+        'Feito':False
+    }
+    tasks.append(database_add_task)
+
+    back_to_menu()
 
 def look():
     for task in tasks:
