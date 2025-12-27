@@ -40,8 +40,8 @@ def add_task():
     database_add_task={
         'nome':name_task,
         'dificulade':level_task,
-        'Data':datetime.date.today(),
-        'Feito':False
+        'data':datetime.date.today(),
+        'feito':False
     }
     tasks.append(database_add_task)
 
@@ -49,7 +49,19 @@ def add_task():
 
 def look():
     for task in tasks:
-        print(f'[ ] {task}')
+        name_print=task['nome']
+        level_print=task['dificulade']
+        date_print=task['data']
+        mark_print= '[ ]' if task['feito'] else '[X]'
+        print(
+            {
+                'nome':name_print,
+                'dificulade':level_print,
+                'data':date_print,
+                'feito':mark_print,
+            }
+        )
+
 
 def cut_task():
     pass
