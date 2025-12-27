@@ -52,7 +52,7 @@ def look():
         name_print=task['nome']
         level_print=task['dificulade']
         date_print=task['data']
-        mark_print= '[ ]' if task['feito'] else '[X]'
+        mark_print= '[X]' if task['feito'] else '[ ]'
         print(
             {
                 'nome':name_print,
