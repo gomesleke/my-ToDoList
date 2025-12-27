@@ -48,19 +48,13 @@ def add_task():
     back_to_menu()
 
 def look():
+    os.system('cls')
     for task in tasks:
         name_print=task['nome']
         level_print=task['dificulade']
         date_print=task['data']
         mark_print= '[X]' if task['feito'] else '[ ]'
-        print(
-            {
-                'nome':name_print,
-                'dificulade':level_print,
-                'data':date_print,
-                'feito':mark_print,
-            }
-        )
+        print(f'{mark_print} - {name_print} - {level_print} - {date_print}')
 
 
 def cut_task():
